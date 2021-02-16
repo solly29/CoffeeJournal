@@ -1,18 +1,14 @@
-package com.example.coffeejournal.view
+package com.example.coffeejournal.presentation.view
 
 import android.content.Intent
-import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.coffeejournal.R
 import com.example.coffeejournal.base.BaseActivity
-import com.example.coffeejournal.viewmodel.IntroViewModel
+import com.example.coffeejournal.databinding.ActivityIntroBinding
+import com.example.coffeejournal.presentation.viewmodel.IntroViewModel
 import kotlinx.android.synthetic.main.activity_intro.*
-import kotlinx.coroutines.*
 
-class IntroActivity : BaseActivity<IntroViewModel>() {
+class IntroActivity : BaseActivity<IntroViewModel, ActivityIntroBinding>() {
 
     override val layoutId: Int
         get() = R.layout.activity_intro

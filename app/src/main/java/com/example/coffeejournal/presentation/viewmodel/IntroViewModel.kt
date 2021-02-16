@@ -1,4 +1,4 @@
-package com.example.coffeejournal.viewmodel
+package com.example.coffeejournal.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

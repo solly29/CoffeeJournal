@@ -1,12 +1,11 @@
-package com.example.coffeejournal.view
+package com.example.coffeejournal.presentation.view
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.example.coffeejournal.R
 import com.example.coffeejournal.base.BaseActivity
-import com.example.coffeejournal.viewmodel.MainViewModel
+import com.example.coffeejournal.databinding.ActivityMainBinding
+import com.example.coffeejournal.presentation.viewmodel.MainViewModel
 
-class MainActivity : BaseActivity<MainViewModel>() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override val layoutId: Int
         get() = R.layout.activity_main

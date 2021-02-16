@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:background="#c6b38c">
 
-        <com.example.coffeejournal.customview.IntroCustomImage
+        <com.example.coffeejournal.presentation.customview.IntroCustomImage
             android:id="@+id/intro_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

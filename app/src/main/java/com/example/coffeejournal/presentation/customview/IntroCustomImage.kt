@@ -1,7 +1,6 @@
-package com.example.coffeejournal.customview
+package com.example.coffeejournal.presentation.customview
 
 import android.content.Context
-import android.graphics.Canvas
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
@@ -10,9 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.view.children
 import com.example.coffeejournal.R
-import kotlinx.android.synthetic.main.activity_intro.*
 import kotlinx.coroutines.*
-import kotlin.concurrent.thread
 
 class IntroCustomImage @JvmOverloads constructor(
     context: Context,

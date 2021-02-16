@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoffeeJournal">
-        <activity android:name=".view.IntroActivity"
+        <activity android:name="com.example.coffeejournal.presentation.view.IntroActivity"
             android:theme="@style/noActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.LoginActivity"/>
-        <activity android:name=".view.MainActivity"/>
+        <activity android:name="com.example.coffeejournal.presentation.view.LoginActivity"/>
+        <activity android:name="com.example.coffeejournal.presentation.view.MainActivity"/>
     </application>
 
 </manifest>

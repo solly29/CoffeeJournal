@@ -1,6 +1,7 @@
 package com.example.coffeejournal
 
 import android.app.Application
+import com.example.coffeejournal.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -11,6 +12,8 @@ class MyApplication: Application() {
 
         startKoin {
             androidContext(this@MyApplication)
+
+            modules(viewModelModule)
         }
     }
 }

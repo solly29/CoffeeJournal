@@ -1,6 +1,5 @@
-package com.example.coffeejournal.viewmodel
+package com.example.coffeejournal.presentation.viewmodel
 
-import androidx.lifecycle.ViewModel
 import com.example.coffeejournal.base.BaseViewModel
 
 class MainViewModel: BaseViewModel() {

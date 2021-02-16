@@ -33,8 +33,13 @@ android {
         jvmTarget = '1.8'
     }
 
-    dataBinding{
-        enabled = true
+    buildFeatures {
+        dataBinding = true
+    }
+
+    testOptions {
+        // 테스트 코드의 api가 구현되어있지 않을때 null 또는 0을 리턴한다.
+        unitTests.returnDefaultValues = true
     }
 }
 
@@ -45,9 +50,14 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // test
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'org.mockito:mockito-android:2.24.5'
+    testImplementation 'org.mockito:mockito-inline:2.21.0'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
 
     // Koin for Android
     implementation "org.koin:koin-android:$koin_version"
