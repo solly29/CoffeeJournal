@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoffeeJournal">
-        <activity android:name="com.example.coffeejournal.presentation.view.IntroActivity"
+        <activity android:name=".presentation.view.IntroActivity"
             android:theme="@style/noActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.coffeejournal.presentation.view.LoginActivity"/>
-        <activity android:name="com.example.coffeejournal.presentation.view.MainActivity"/>
+        <activity android:name=".presentation.view.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.view.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.view.JoinActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

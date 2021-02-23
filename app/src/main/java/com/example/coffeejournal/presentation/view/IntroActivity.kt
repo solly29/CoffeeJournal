@@ -6,7 +6,6 @@ import com.example.coffeejournal.R
 import com.example.coffeejournal.base.BaseActivity
 import com.example.coffeejournal.databinding.ActivityIntroBinding
 import com.example.coffeejournal.presentation.viewmodel.IntroViewModel
-import kotlinx.android.synthetic.main.activity_intro.*
 
 class IntroActivity : BaseActivity<IntroViewModel, ActivityIntroBinding>() {
 
@@ -16,7 +15,7 @@ class IntroActivity : BaseActivity<IntroViewModel, ActivityIntroBinding>() {
 
     override fun initStartView() {
         viewModel.setLoading(false)
-        intro_progress.showProgress()
+        binding.introProgress.showProgress()
     }
 
     override fun initDataBinding() {
@@ -34,7 +33,7 @@ class IntroActivity : BaseActivity<IntroViewModel, ActivityIntroBinding>() {
     }
 
     override fun initEvent() {
-        intro_progress.onStopListener {
+        binding.introProgress.onStopListener {
             viewModel.setLoading(it)
         }
     }

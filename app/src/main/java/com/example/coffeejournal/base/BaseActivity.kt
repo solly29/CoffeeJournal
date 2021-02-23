@@ -5,6 +5,8 @@ import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Observer
+import com.example.coffeejournal.presentation.ext.makeToast
 
 abstract class BaseActivity<T: BaseViewModel, B: ViewDataBinding>: AppCompatActivity() {
 
@@ -19,11 +21,18 @@ abstract class BaseActivity<T: BaseViewModel, B: ViewDataBinding>: AppCompatActi
     abstract fun initEvent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         binding = DataBindingUtil.setContentView(this, layoutId)
         binding.lifecycleOwner = this
         initStartView()
+
+        with(viewModel){
+            toastLiveData.observe(this@BaseActivity, Observer {
+                this@BaseActivity.makeToast(it)
+            })
+        }
+
         initDataBinding()
         initEvent()
     }

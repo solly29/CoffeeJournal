@@ -7,8 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="tool_bar_color">#c6b38c</color><!-- 인트로, 상태바 컬러-->
+    <color name="app_bar_color">#AC9B7A</color><!-- 인트로, 상태바 컬러-->
     <color name="coffee_color1">#F3E0BE</color>
     <color name="coffee_color2">#a28750</color>
     <color name="coffee_color3">#b59d6a</color>
+
+    <color name="success_color">#4D87FD</color>
+    <color name="fail_color">#FF5656</color>
 </resources>

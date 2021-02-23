@@ -4,8 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.coffeejournal.domain.usecase.LoginUseCase
 import com.example.coffeejournal.presentation.viewmodel.LoginViewModel
 import org.junit.Test
-
 import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Rule
 import org.junit.runner.RunWith
 import org.mockito.ArgumentMatchers
@@ -29,10 +29,17 @@ class LoginUnitTest {
     @Mock
     lateinit var loginUseCase: LoginUseCase
 
+    lateinit var loginViewModel: LoginViewModel
+
+    @Before
+    fun setLoginViewModel() {
+        loginViewModel = LoginViewModel(loginUseCase)
+    }
+
     @Test
     fun login_test() {
         /* Given */
-        val loginViewModel = LoginViewModel(loginUseCase)
+//        val loginViewModel = LoginViewModel(loginUseCase)
         loginViewModel.idLiveData.value = "d008"
         loginViewModel.pwLiveData.value = "1"
 
@@ -48,8 +55,9 @@ class LoginUnitTest {
     @Test
     fun `아이디_공백_테스트`(){
         /* Given */
-        val loginViewModel = LoginViewModel(loginUseCase)
+//        val loginViewModel = LoginViewModel(loginUseCase)
         loginViewModel.idLiveData.value = "d008"
+        loginViewModel.pwLiveData.value = null
 
         /* when */
         loginViewModel.loginButtonClick()
@@ -58,5 +66,21 @@ class LoginUnitTest {
         verify(loginUseCase, never()).loginCheck(anyString(), anyString())
         assertEquals(null, loginViewModel.loginStateLiveData.value)
         assertEquals("아이디 또는 비밀번호가 입력되지 않았습니다.", loginViewModel.toastLiveData.value)
+    }
+
+    @Test
+    fun login_fail_test() {
+        /* Given */
+//        val loginViewModel = LoginViewModel(loginUseCase)
+        loginViewModel.idLiveData.value = "d008"
+        loginViewModel.pwLiveData.value = "2"
+
+        /* when */
+        `when`(loginUseCase.loginCheck(anyString(), anyString())).thenReturn(false)
+        loginViewModel.loginButtonClick()
+
+        /* then */
+        verify(loginUseCase).loginCheck("d008", "2")
+        assertEquals(false, loginViewModel.loginStateLiveData.value)
     }
 }

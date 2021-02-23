@@ -5,10 +5,10 @@ import com.example.coffeejournal.data.repository.LoginRepository
 
 class LoginUseCase(private val loginRepository: LoginRepository) {
 
-    val liveData = MutableLiveData<String>()
-
     fun loginCheck(id: String, pw: String): Boolean{
-        liveData.value = "atat"
-        return false
+        return id == "admin" && pw == "1"
     }
 }
+
+
+
